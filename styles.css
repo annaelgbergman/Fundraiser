@@ -14,8 +14,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
-    box-shadow: 1px 1px 1rem #000;
-    width: 850px;
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+    
 }
 
 /* IMG - FORUM */
@@ -34,7 +34,7 @@ body {
     letter-spacing: .3em;
 }
 .line {
-    height: 1.5px;
+    height: 1.8px;
     width: 70%;
     border: none;
     background-color: #E3ECEE;
@@ -69,7 +69,7 @@ body {
     
 }
 .headline h1 {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     margin-left: 1.5rem;
     justify-content: center;
     color: #0C4972;
@@ -83,6 +83,48 @@ body {
     background-color: #0C4972;
 }
 .headline p {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     margin-left: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 20px;
+}
+.p-2 {
+    margin-top: .2rem;
+}
+
+.form-control {
+    margin-top: 1.3rem;
+    width: 85%;
+    height: 3rem;
+    border: 1.5px solid #b9b8b8;
+    border-radius: .3rem;
+    margin-left: 1.5rem;
+}
+input[type=text] {
+    padding: 12px;
+    font-size: 16px;
+    color: #8d8c8c;
+}
+.email {
+    padding: 12px;
+    font-size: 16px;
+    color: #8d8c8c;
+}
+
+.btn {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    height: 3.2rem;
+    border: none;
+    border-radius: .3rem;
+    width: 85%;
+    cursor: pointer;
+    background: #015675;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+.btn:hover {
+    background-color: #024158;
 }
