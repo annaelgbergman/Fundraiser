@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/img/ocean.jpg");
+}
+
+/* IMG - FORUM */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+/* .container img {
+    width: 400px;
+} */
+
+.image {
+    width: 400px;
+    height: 500px;
+    position: relative;
+}
+.text h2 {
+    position: absolute;
+    top: 2rem;
+    color: #E3ECEE;
+    left: 1.9rem;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: .2em;
+ 
+}
+.image img {
+  width: 400px;
+  background-position: cover;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: #000 ;
+  
+}
+.overlay {
+    background: #000;
+    opacity: .3;
+    position: absolute;
+    /* inset: 1; */
+    width: 380px;
+    height: 580px;
+    left: .6rem;
+    top: .6rem;
+}
+.form {
+    width: 500px;
+    background-color: #fff;
+
+}
