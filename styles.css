@@ -9,17 +9,16 @@ body {
     background-image: url("/img/ocean.jpg");
 }
 
-/* IMG - FORUM */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 5rem;
+    box-shadow: 1px 1px 1rem #000;
+    width: 850px;
 }
-/* .container img {
-    width: 400px;
-} */
 
+/* IMG - FORUM */
 .image {
     width: 400px;
     height: 500px;
@@ -27,19 +26,27 @@ body {
 }
 .text h2 {
     position: absolute;
-    top: 2rem;
+    top: -0.6rem;
     color: #E3ECEE;
-    left: 1.9rem;
+    left: 2.5rem;
     text-align: center;
-    font-size: 30px;
-    letter-spacing: .2em;
- 
+    font-size: 25px;
+    letter-spacing: .3em;
+}
+.line {
+    height: 1.5px;
+    width: 70%;
+    border: none;
+    background-color: #E3ECEE;
+    position: absolute;
+    left: 4rem;
+    top: 3.5rem;
 }
 .image img {
   width: 400px;
   background-position: cover;
   position: absolute;
-  overflow: hidden;
+  top: -3.11rem;
   box-shadow: #000 ;
   
 }
@@ -51,10 +58,31 @@ body {
     width: 380px;
     height: 580px;
     left: .6rem;
-    top: .6rem;
+    top: -2.5rem;
 }
-.form {
-    width: 500px;
-    background-color: #fff;
 
+/* FORUM */
+.form {
+    height: 600px;
+    width: 450px;
+    background-color: #fff;
+    
+}
+.headline h1 {
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+    justify-content: center;
+    color: #0C4972;
+   
+}
+.line-2 {
+    margin-left: 1.5rem;
+    width: 85%;
+    border: none;
+    height: 1.5px;
+    background-color: #0C4972;
+}
+.headline p {
+    margin-top: 1rem;
+    margin-left: 1.5rem;
 }
