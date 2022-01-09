@@ -88,7 +88,9 @@ body {
     margin-bottom: .5rem;
     font-size: 20px;
 }
-
+.form-control {
+    padding-bottom: 18px;
+}
 .form-control input {
     margin-top: 1.3rem;
     width: 85%;
@@ -96,18 +98,6 @@ body {
     border: 1.5px solid #b9b8b8;
     border-radius: .3rem;
     margin-left: 1.5rem;
-}
-.form-control.success input {
-    border: 2px solid #4d8b4d;
-}
-.form-control.error input {
-    border: 2px solid #c95050;
-}
-.form-control.success i.right {
-    visibility: visible;
-}
-.form-control.error i.wrong {
-    visibility: visible;
 }
 input[type=text] {
     padding: 12px;
@@ -119,7 +109,62 @@ input[type=text] {
     font-size: 16px;
     color: #8d8c8c;
 }
-.invalid-feedback {
+.btn {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    height: 3.2rem;
+    border: none;
+    border-radius: .3rem;
+    width: 85%;
+    cursor: pointer;
+    background: #015675;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+.btn:hover {
+    background-color: #024158;
+}
+/* SUCCESS */
+.form-control.success input {
+    border: 2px solid #72b372;
+}
+.form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #72b372;
+}
+.fRight, .lRight, .eRight {
+    color: #72b372;
+    position: absolute;
+    right: 3.2rem;
+}
+.fRight {
+    top: 17.2rem;
+}
+.lRight {
+    top: 22.5rem;
+}
+.eRight {
+    top: 28rem;
+}
+/* ERROR */
+.form-control.error input {
+    border: 2px solid #c95050;
+}
+.form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #c95050;
+}
+.form-control p {
+    position: absolute;
+    left: 1.5rem;
+    visibility: hidden;
+}
+.form-control.error p {
+    visibility: visible;
+}
+/* .invalid-feedback {
     margin-left: 1.6rem;
     margin-top: .2rem;
     color: #c95050;
@@ -139,38 +184,22 @@ input[type=text] {
     color: #c95050;
     font-size: 14px;
     display: none;
-}
-.right {
-    color: #4d8b4d;
-    position: absolute;
-    top: 17.2rem;
-    right: 1.2rem;
-}
-.wrong {
+} */
+.fWrong, .lWrong, .eWrong {
     color: #c95050;
+    position: absolute;
+    right: 3.2rem;
+}
+.fWrong {
+    top: 17.2rem;
+}
+.lWrong {
+    top: 22.5rem;
+}
+.eWrong {
+    top: 28rem;
 }
 .form-control i {
     visibility: hidden;
-    position: absolute;
-    
 }
 
-
-
-.btn {
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-    height: 3.2rem;
-    border: none;
-    border-radius: .3rem;
-    width: 85%;
-    cursor: pointer;
-    background: #015675;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-}
-.btn:hover {
-    background-color: #024158;
-}
