@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -30,12 +31,39 @@
            
             <div>
                 <input type="text" class="form-control firstName" placeholder=" Förnamn">
+                <i class="far fa-check-circle right"></i>
+                <i class="fas fa-exclamation wrong"></i>
+                <div class="invalid-feedback">
+                    Skriv in ditt förnamn.
+                </div>
+                <div class="change-feedback">
+                    Du måste ange minst två tecken.
+                </div>
             </div>
             <div>
                 <input type="text" class="form-control" placeholder=" Efternamn">
+                <i class="far fa-check-circle right"></i>
+                <i class="fas fa-exclamation wrong"></i>
+                <div class="invalid-feedback">
+                    Skriv in ditt efternamn.
+                </div>
+                <div class="change-feedback">
+                    Du måste ange minst två tecken.
+                </div>
             </div>
             <div>
                 <input type="email" class="form-control email" placeholder=" Email*">
+                <i class="far fa-check-circle right"></i>
+                <i class="fas fa-exclamation wrong"></i>
+                <div class="invalid-feedback">
+                    Skriv in din email.
+                </div>
+                <div class="change-feedback">
+                    E-postadressen är otillgänlig testa igen. 
+                </div>
+                <div class="exists-feedback">
+                    Denna e-post är redan registrerad, testa en annan.
+                </div>
             </div>
 
             <div>

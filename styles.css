@@ -88,9 +88,7 @@ body {
     margin-bottom: .5rem;
     font-size: 20px;
 }
-.p-2 {
-    margin-top: .2rem;
-}
+
 
 .form-control {
     margin-top: 1.3rem;
@@ -110,6 +108,36 @@ input[type=text] {
     font-size: 16px;
     color: #8d8c8c;
 }
+.invalid-feedback {
+    margin-left: 1.6rem;
+    margin-top: .2rem;
+    color: #c95050;
+    font-size: 14px;
+    display: none;
+}
+.change-feedback {
+    margin-left: 1.6rem;
+    margin-top: .2rem;
+    color: #c95050;
+    font-size: 14px;
+    display: none;
+}
+.exists-feedback {
+    margin-left: 1.6rem;
+    margin-top: .2rem;
+    color: #c95050;
+    font-size: 14px;
+    display: none;
+}
+.right {
+    color: #4d8b4d;
+    
+}
+.wrong {
+    color: #c95050;
+  
+}
+
 
 .btn {
     margin-left: 1.5rem;
