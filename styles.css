@@ -17,6 +17,30 @@ body {
     filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
     
 }
+.btn {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    height: 3.2rem;
+    border: none;
+    border-radius: .3rem;
+    width: 85%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+.btn-primary {
+    background: #015675;
+    color: #fff;
+    transition: background 100ms;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #024158;
+}
+.btn-primary:active {
+    background-color: #023346;
+}
 
 /* IMG - FORUM */
 .image {
@@ -47,8 +71,7 @@ body {
   background-position: cover;
   position: absolute;
   top: -3.11rem;
-  box-shadow: #000 ;
-  
+  /* box-shadow: #000; */
 }
 .overlay {
     background: #000;
@@ -63,7 +86,7 @@ body {
 
 /* FORUM */
 .form {
-    height: 600px;
+    height: 599px;
     width: 450px;
     background-color: #fff;
     position: relative;
@@ -88,10 +111,14 @@ body {
     margin-bottom: .5rem;
     font-size: 20px;
 }
-.form-control {
-    padding-bottom: 18px;
+.input-group {
+    padding-bottom: 15px;
+    position: relative;
 }
-.form-control input {
+.form-control:focus {
+    outline: 1px solid #888888;
+}
+.input-group input {
     margin-top: 1.3rem;
     width: 85%;
     height: 3rem;
@@ -109,97 +136,50 @@ input[type=text] {
     font-size: 16px;
     color: #8d8c8c;
 }
-.btn {
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-    height: 3.2rem;
-    border: none;
-    border-radius: .3rem;
-    width: 85%;
-    cursor: pointer;
-    background: #015675;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: .1rem;
+.fa-check-circle,
+.fa-exclamation-circle {
+    position: absolute;
+    right: 3.2rem;
+    top: 2.2rem;
 }
-.btn:hover {
-    background-color: #024158;
+.fa-check-circle {
+    color: #72b372;
 }
 /* SUCCESS */
-.form-control.success input {
-    border: 2px solid #72b372;
+.success .form-control {
+    border: 1px solid #72b372;
+    outline-color: 1px solid #72b372;
+
 }
-.form-control.success i.fa-check-circle {
+.success .fa-check-circle {
     visibility: visible;
-    color: #72b372;
 }
-.fRight, .lRight, .eRight {
-    color: #72b372;
-    position: absolute;
-    right: 3.2rem;
-}
-.fRight {
-    top: 17.2rem;
-}
-.lRight {
-    top: 22.5rem;
-}
-.eRight {
-    top: 28rem;
-}
+
 /* ERROR */
-.form-control.error input {
-    border: 2px solid #c95050;
+.error .form-control {
+    border: 1px solid #c95050;
+    outline-color: 1px solid #c95050;
 }
-.form-control.error i.fa-exclamation-circle {
+.error .fa-exclamation-circle {
     visibility: visible;
-    color: #c95050;
 }
-.form-control p {
+.input-group p {
     position: absolute;
+    top: 4.5rem;
     left: 1.5rem;
-    visibility: hidden;
-}
-.form-control.error p {
-    visibility: visible;
-}
-/* .invalid-feedback {
-    margin-left: 1.6rem;
-    margin-top: .2rem;
+    display: none;
+    right: 1.5rem;
     color: #c95050;
     font-size: 14px;
-    display: none;
 }
-.change-feedback {
-    margin-left: 1.6rem;
-    margin-top: .2rem;
+.error .invalid-input{
+    display: block;
+}
+.fa-exclamation-circle {
     color: #c95050;
-    font-size: 14px;
-    display: none;
 }
-.exists-feedback {
-    margin-left: 1.6rem;
-    margin-top: .2rem;
-    color: #c95050;
-    font-size: 14px;
-    display: none;
-} */
-.fWrong, .lWrong, .eWrong {
-    color: #c95050;
-    position: absolute;
-    right: 3.2rem;
-}
-.fWrong {
-    top: 17.2rem;
-}
-.lWrong {
-    top: 22.5rem;
-}
-.eWrong {
-    top: 28rem;
-}
-.form-control i {
+
+.input-group i {
     visibility: hidden;
 }
 

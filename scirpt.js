@@ -1,37 +1,57 @@
-const form = document.getElementById('regForm');
-const firstName = document.getElementById('firstName');
-const lastName = document.getElementById('lastName');
-const email = document.getElementById('email');
+const form = document.querySelector('#regForm');
+const firstName = document.querySelector('#firstName');
+const lastName = document.querySelector('#lastName');
+const email = document.querySelector('#email');
 
-form.addEventListener('SKRIV UNDER', (e) => {
-    e.preventDefault();
+const validateText = (input) => {
+    if (input.value.trim() === '') {
+        setError(input, 'Du måste fylla i ditt namn')
+        return false;
+    }
+    else if (input.value.trim().length < 2) {
+        setError(input, 'Du måste ange minst två tecken')
+        return false;
+    }
+    else {
+        setSuccess(input)
+        return true;
+    }
+}
+const validateEmail = email => {
+    let regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-    checkInputs();
-});
-
-function checkInputs() {
-    //get the values from the inputs
-    const firstNameValue = firstName.value.trim();
-    const lastName = lastName.value.trim();
-    const email = email.value.trim();
-
-    if(firstNameValue === '') {
-        //show error 
-        // add error class
-        setErrorFor(firstName, 'Skriv in ditt förnamn.');
-    }else {
-        //add success class
-        setSuccessFor(firstName);
+    if (email.value.trim() === '') {
+        setError(email, 'Du måste ange en e-postadress')
+        return false;
+    }
+    else if (!regEx.test(email.value)) {
+        setError(email, 'E-postadressen är inte giltig')
+        return false;
+    }
+    else {
+        setSuccess(email)
+        return true;
     }
 }
 
-function setErrorFor(input, message) {
-    const formControl = input.parentElement; //form-control
-    const errorMessage = formControl.querySelector('p');
 
-    // add error message inside p
-    small.innerText = message;
-
-    //add error class
-    formControl.className = 'form-control error';
+const setError = (input, textMessage) => {
+    const parent = input.parentElement;
+    parent.classList.add('error');
+    parent.classList.remove('success');
+    parent.querySelector('.invalid-input').innerText = textMessage;
 }
+const setSuccess = input => {
+    const parent = input.parentElement;
+    parent.classList.remove('error');
+    parent.classList.add('success');
+}
+
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    validateText(firstName)
+    validateText(lastName)
+    validateEmail(email)
+})
