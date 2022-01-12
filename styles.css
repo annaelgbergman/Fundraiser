@@ -17,22 +17,25 @@ body {
     filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
     
 }
+
 .btn {
     margin-left: 1.5rem;
     margin-top: 1rem;
     height: 3.2rem;
     border: none;
-    border-radius: .3rem;
     width: 85%;
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: .1rem;
+    border: transparent;
+    background: transparent;
 }
 .btn-primary {
     background: #015675;
     color: #fff;
     transition: background 100ms;
+    border-radius: .3rem;
 }
 .btn-primary:hover,
 .btn-primary:focus {
@@ -71,7 +74,6 @@ body {
   background-position: cover;
   position: absolute;
   top: -3.11rem;
-  /* box-shadow: #000; */
 }
 .overlay {
     background: #000;
@@ -84,7 +86,56 @@ body {
     top: -2.5rem;
 }
 
-/* FORUM */
+/* UTSKRIVNING AV VALUE */
+
+.value-wrapper {
+    position: relative;
+}
+.box {
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    border: 1px solid #fff;
+    top: 5.5rem;
+    left: 4rem;
+}
+.value-name,
+.value-email {
+    position: absolute;
+    left: .5rem;
+    color: #E3ECEE;
+}
+.value-name {
+    bottom: 1.3rem;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+.value-email {
+    top: 1.5rem;
+    font-size: 15px;
+}
+.btn-value {
+    border: transparent;
+    background: transparent;
+    position: absolute;
+    color: #015675;
+}
+.edit {
+    bottom: .9rem;
+    right: 2.3rem;
+    font-size: .9rem;
+}
+.delete {
+    bottom: .6rem;
+    right: 1rem;
+    font-size: 1.3rem;
+}
+
+/* SLUT */
+
+
+
+/* FORUM START */
 .form {
     height: 599px;
     width: 450px;
@@ -140,7 +191,7 @@ input[type=text] {
 .fa-exclamation-circle {
     position: absolute;
     right: 3.2rem;
-    top: 2.2rem;
+    top: 2.3rem;
 }
 .fa-check-circle {
     color: #72b372;

@@ -16,9 +16,22 @@
         <div class="image">
             <img src="img/turtle.jpg" alt="turle">
             <div class="overlay"></div>
-            <div class="text">
-                <h2>TACK FÖR ATT NI <br>HJÄLPER TILL</h2>
-                <hr class="line">
+
+            <div class="wrapper">
+                <div class="text">
+                    <h2>TACK FÖR ATT NI <br>HJÄLPER TILL</h2>
+                    <hr class="line">
+                </div>
+                <div id="value-output" class="output">
+                    <div class="box">
+                        <div>
+                            <p class="value-name">name</p>
+                            <p class="value-email">email</p>
+                        </div>
+                        <button class="btn-value edit"><i class="fas fa-pen"></i></button>
+                        <button class="btn-value delete"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -34,42 +47,26 @@
                 <i class="fas fa-check-circle fRight success"></i>
                 <i class="fas fa-exclamation-circle fWrong error"></i>
                 <p class="invalid-input">Error message</p>
-                <!-- <div class="invalid-feedback">
-                    Skriv in ditt förnamn.
-                </div>
-                <div class="change-feedback">
-                    Du måste ange minst två tecken.
-                </div> -->
             </div>
+
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Efternamn" id="lastName">
                 <i class="fas fa-check-circle lRight success"></i>
                 <i class="fas fa-exclamation-circle lWrong error"></i>
                 <p class="invalid-input">Error message</p>
-                <!-- <p class="invalid-feedback error">Skriv in ditt efternamn.</p>
-                <div class="change-feedback">
-                    Du måste ange minst två tecken.
-                </div> -->
             </div>
+
             <div class="input-group">
                 <input type="email" class="email form-control" placeholder="E-post*" id="email">
                 <i class="fas fa-check-circle eRight success"></i>
                 <i class="fas fa-exclamation-circle eWrong error"></i>
                 <p class="invalid-input">Error message</p>
-                <!-- <div class="invalid-feedback">
-                    Skriv in din email.
-                </div>
-                <div class="change-feedback">
-                    E-postadressen är otillgänlig testa igen. 
-                </div>
-                <div class="exists-feedback">
-                    Denna e-post är redan registrerad, testa en annan.
-                </div> -->
             </div>
 
             <div>
                 <button class="btn btn-primary">SKRIV UNDER</button>
             </div>
+
         </form>
     </div>
 
