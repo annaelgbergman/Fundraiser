@@ -1,7 +1,8 @@
-const form = document.querySelector('#regForm');
+const regForm = document.querySelector('#regForm');
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
+
 
 const validateText = (input) => {
     if (input.value.trim() === '') {
@@ -48,10 +49,37 @@ const setSuccess = input => {
 }
 
 
-form.addEventListener('submit', e => {
+const validate = input => {
+    switch(input.type){
+        case 'text': return validateText(input)
+        case 'email': return validateEmail(input)
+
+        default:
+            break;
+    }
+}
+
+
+regForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    validateText(firstName)
-    validateText(lastName)
-    validateEmail(email)
+    errors = []
+
+    for(let i = 0; i < regForm.length; i++) {
+        errors[i] = validate(regForm[i])
+    }
+    console.log(errors)
+
+    if(!errors.includes(false)) {
+    const user = {
+        id: Date.now().toString(),
+        firstName : firstName.value,
+        lastName : lastName.value,
+        email : email.value
+    }
+        console.log(user);
+    }
+    
+
 })
+
