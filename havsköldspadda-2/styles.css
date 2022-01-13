@@ -1,23 +1,28 @@
-* {
+:root {
+    ---clr-primary: #015675;
+    ---clr-secondary:#E3ECEE;
+    ---clr-success: #72b372;
+    ---clr-error: #c95050;
+
+}
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("/img/ocean.jpg");
 }
-
-.container {
+.wrapper {
+    margin: auto;
     display: flex;
     justify-content: center;
+    box-shadow: 3px 3px 5px solid #333;
     align-items: center;
-    margin-top: 5rem;
-    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
-    
+    height: 100vh;
 }
-
 .btn {
     margin-left: 1.5rem;
     margin-top: 1rem;
@@ -45,122 +50,96 @@ body {
     background-color: #023346;
 }
 
-/* IMG - FORUM */
-.image {
+/*---- IMAGE ----*/
+.left {
+    background: url("/img/turtle.jpg") #3333333f;
     width: 400px;
-    height: 500px;
-    position: relative;
+    height: 550px;
+    background-size: cover;
+    background-blend-mode: multiply;
+    border-width: 7px;
+    border-style: solid;
+    border-image: linear-gradient(#A1CFCC,#CAD0C6) 1;
 }
-.text h2 {
-    position: absolute;
-    top: -0.6rem;
-    color: #E3ECEE;
-    left: 2.5rem;
+.text h2{
+    margin-top: 1rem;
+    color: var(---clr-secondary);
     text-align: center;
     font-size: 25px;
     letter-spacing: .3em;
 }
 .line {
-    height: 1.8px;
-    width: 70%;
+    height: 2px;
+    width: 300px;
+    margin-left: 2.5rem;
+    margin-top: .5rem;
     border: none;
-    background-color: #E3ECEE;
-    position: absolute;
-    left: 4rem;
-    top: 3.5rem;
-}
-.image img {
-  width: 400px;
-  background-position: cover;
-  position: absolute;
-  top: -3.11rem;
-}
-.overlay {
-    background: #000;
-    opacity: .3;
-    position: absolute;
-    /* inset: 1; */
-    width: 380px;
-    height: 580px;
-    left: .6rem;
-    top: -2.5rem;
+    background-color: var(---clr-secondary);
 }
 
-/* UTSKRIVNING AV VALUE */
-
-.value-wrapper {
-    position: relative;
-}
+/* VALUE OUTPUT */
 .box {
-    position: absolute;
-    width: 280px;
+    width: 300px;
     height: 50px;
-    border: 1px solid #fff;
-    top: 5.5rem;
-    left: 4rem;
+    border: 2px solid var(---clr-secondary);
+    margin-left: 2.5rem;
+    margin-top: 1.2rem;
+    display: flex;
+    position: relative;
 }
 .value-name,
 .value-email {
-    position: absolute;
-    left: .5rem;
-    color: #E3ECEE;
+ color: #fff;
+ margin-left: .3rem;
 }
-.value-name {
-    bottom: 1.3rem;
-    font-size: 17px;
-    letter-spacing: 1px;
+.value-name{
+    margin-top: .3rem;
+    font-size: 18px;
 }
-.value-email {
-    top: 1.5rem;
+.value-email{
     font-size: 15px;
 }
 .btn-value {
     border: transparent;
     background: transparent;
-    position: absolute;
     color: #015675;
+    margin-left: 5rem;
 }
 .edit {
-    bottom: .9rem;
-    right: 2.3rem;
-    font-size: .9rem;
+    font-size: 1rem;
+    position: absolute;
+    right: 2.5rem;
+    top: 1rem;
 }
 .delete {
-    bottom: .6rem;
+    font-size: 1.4rem;
+    position: absolute;
     right: 1rem;
-    font-size: 1.3rem;
+    top: .8rem;
 }
 
-/* SLUT */
-
-
-
-/* FORUM START */
-.form {
-    height: 599px;
-    width: 450px;
+/*---- FORM ----*/
+.right {
     background-color: #fff;
-    position: relative;
+    width: 450px;
+    height: 550px;
 }
 .headline h1 {
-    margin-top: 2.5rem;
-    margin-left: 1.5rem;
-    justify-content: center;
+    margin-top: 1.3rem;
+    margin-left: 1.7rem;
     color: #0C4972;
-   
 }
 .line-2 {
-    margin-left: 1.5rem;
-    width: 85%;
+    margin-left: 1.7rem;
+    width: 23.8rem;
     border: none;
-    height: 1.5px;
+    height: 2px;
     background-color: #0C4972;
 }
 .headline p {
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-    margin-bottom: .5rem;
-    font-size: 20px;
+    margin-top: .5rem;
+    margin-left: 1.7rem;
+    font-size: 18px;
 }
 .input-group {
     padding-bottom: 15px;
@@ -233,4 +212,3 @@ input[type=text] {
 .input-group i {
     visibility: hidden;
 }
-
