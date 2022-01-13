@@ -2,7 +2,7 @@ const regForm = document.querySelector('#regForm');
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
-
+const output = document.querySelector('#value-output');
 
 const validateText = (input) => {
     if (input.value.trim() === '') {
@@ -59,6 +59,29 @@ const validate = input => {
     }
 }
 
+const signatures = [];
+
+const addSignature = () => {
+    output.innerHTML = '';
+
+    signatures.forEach(user => {
+        output.innerHTML += `
+        <div class="box" id="${user.id}">
+        <div>
+            <div class="name">
+                <h4 class="value-name">${user.firstName}</h4>
+                <h3 class="value-name">${user.lastName}</h3>
+            </div>
+            <p class="value-email">${user.email}</p>
+        </div>
+        <button class="btn-value edit"><i class="fas fa-pen"></i></button>
+        <button class="btn-value delete"><i class="fas fa-times"></i></button>
+       </div>
+        `
+    })
+
+}
+addSignature();
 
 regForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -68,7 +91,6 @@ regForm.addEventListener('submit', e => {
     for(let i = 0; i < regForm.length; i++) {
         errors[i] = validate(regForm[i])
     }
-    console.log(errors)
 
     if(!errors.includes(false)) {
     const user = {
@@ -77,9 +99,19 @@ regForm.addEventListener('submit', e => {
         lastName : lastName.value,
         email : email.value
     }
-        console.log(user);
+    console.log(user)
+    signatures.push(user)
+    addSignature();
+    firstName.value = ''
+    lastName.value = ''
+    email.value = ''
     }
-    
 
 })
+
+output.addEventListener('click', e => {
+    console.log(e.target.type)
+})
+
+
 

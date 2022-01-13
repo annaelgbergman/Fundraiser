@@ -92,9 +92,13 @@ html, body {
  color: #fff;
  margin-left: .3rem;
 }
+.name {
+    display: flex;
+}
 .value-name{
     margin-top: .3rem;
     font-size: 18px;
+    font-weight: 400;
 }
 .value-email{
     font-size: 15px;
@@ -102,8 +106,14 @@ html, body {
 .btn-value {
     border: transparent;
     background: transparent;
-    color: #015675;
+    color: var(---clr-primary);
     margin-left: 5rem;
+    cursor: pointer;
+}
+.btn-value:hover,
+.btn-value:focus {
+color: #024158;
+transition: background 100ms;
 }
 .edit {
     font-size: 1rem;
