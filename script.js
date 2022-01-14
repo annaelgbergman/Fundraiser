@@ -4,6 +4,7 @@ const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
 const output = document.querySelector('#value-output');
 
+
 const validateText = (input) => {
     if (input.value.trim() === '') {
         setError(input, 'Du måste fylla i ditt namn')
@@ -21,20 +22,23 @@ const validateText = (input) => {
 const validateEmail = email => {
     let regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-    if (email.value.trim() === '') {
+    if (signatures.some(user => user.email === email.value)){
+        setError(email, 'E-postaddressen är upptagen. Prova en annan')
+        return false;
+    }
+    else if (email.value.trim() === '') {
         setError(email, 'Du måste ange en e-postadress')
         return false;
     }
     else if (!regEx.test(email.value)) {
         setError(email, 'E-postadressen är inte giltig')
         return false;
-    }
+    } 
     else {
         setSuccess(email)
         return true;
     }
 }
-
 
 const setError = (input, textMessage) => {
     const parent = input.parentElement;
@@ -59,7 +63,7 @@ const validate = input => {
     }
 }
 
-const signatures = [];
+let signatures = [];
 
 const addSignature = () => {
     output.innerHTML = '';
@@ -74,14 +78,13 @@ const addSignature = () => {
             </div>
             <p class="value-email">${user.email}</p>
         </div>
-        <button class="btn-value edit"><i class="fas fa-pen"></i></button>
-        <button class="btn-value delete"><i class="fas fa-times"></i></button>
+        <button class="btn-value edit" id="btn-edit"><i class="fas fa-pen"></i></button>
+        <button class="btn-value delete" id="btn-delete"><i class="fas fa-times"></i></button>
        </div>
-        `
-    })
+        `   
 
+    })
 }
-addSignature();
 
 regForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -99,7 +102,7 @@ regForm.addEventListener('submit', e => {
         lastName : lastName.value,
         email : email.value
     }
-    console.log(user)
+    console.log(user);
     signatures.push(user)
     addSignature();
     firstName.value = ''
@@ -109,9 +112,15 @@ regForm.addEventListener('submit', e => {
 
 })
 
+//! Knappen
+// e.target.parentNode.parentElement.parentElement
+
+
 output.addEventListener('click', e => {
-    console.log(e.target.type)
+    console.log(e.target)
+    if(e.target.parentElement.id === 'btn-delete') {
+        signatures = signatures.filter(user => user.id !== e.target.parentNode.parentElement.id);
+        addSignature();
+    }
 })
-
-
 
