@@ -41,6 +41,7 @@ html, body {
     color: #fff;
     transition: background 100ms;
     border-radius: .3rem;
+    position: absolute;
 }
 .btn-primary:hover,
 .btn-primary:focus {
@@ -49,6 +50,7 @@ html, body {
 .btn-primary:active {
     background-color: #023346;
 }
+
 
 /*---- IMAGE ----*/
 .left {
@@ -115,6 +117,9 @@ html, body {
 color: #024158;
 transition: background 100ms;
 }
+.save {
+    display: none;
+}
 .edit {
     font-size: 1rem;
     position: absolute;
@@ -133,6 +138,9 @@ transition: background 100ms;
     background-color: #fff;
     width: 450px;
     height: 550px;
+}
+.right .container {
+    position: relative;
 }
 .headline h1 {
     margin-top: 1.3rem;

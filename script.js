@@ -57,10 +57,34 @@ const validate = input => {
     switch(input.type){
         case 'text': return validateText(input)
         case 'email': return validateEmail(input)
-
         default:
             break;
     }
+}
+const editsignature = (e) => {
+
+    signatures.forEach(user => {
+        if(user.id === e.target.parentNode.parentElement.id){
+            user.firstName = firstName.textContent;
+        }
+    })
+
+    //  signatures.forEach(user => {
+    //       if(user.id === e.target.parentNode.parentElement.id){
+    //           signatures.firstName = firstName.textContent;
+              
+    //       }
+          
+    //       )}
+    // const edit = 
+    // signatures.user = firstName.textContent;
+    // user.firstName = firstName.textContent;
+    // user.email = email.value.textContent;
+
+    //  firstName.value = user[0].textContent;
+    //  lastName.value = user[1].textContent;
+    //  email.value = user[2].textContent;
+    //  button.textContent = 'SPARA';
 }
 
 let signatures = [];
@@ -102,25 +126,46 @@ regForm.addEventListener('submit', e => {
         lastName : lastName.value,
         email : email.value
     }
-    console.log(user);
+    console.log(user)
     signatures.push(user)
     addSignature();
-    firstName.value = ''
-    lastName.value = ''
-    email.value = ''
+    firstName.value = '';
+    lastName.value = '';
+    email.value = '';
     }
-
+    
 })
 
-//! Knappen
-// e.target.parentNode.parentElement.parentElement
+
 
 
 output.addEventListener('click', e => {
-    console.log(e.target)
+    
     if(e.target.parentElement.id === 'btn-delete') {
         signatures = signatures.filter(user => user.id !== e.target.parentNode.parentElement.id);
         addSignature();
+    }
+    else if (e.target.parentElement.id === 'btn-edit') {
+    
+    //  signatures.forEach(user => {
+    //       if(user.id === e.target.parentNode.parentElement.id){
+    //           signatures.firstName = firstName.textContent;
+              
+    //       }
+          
+    //       )}
+
+        // user.firstName = firstName.value.textContent;
+        // user.lastName = lastName.value.textContent,
+        // user.email = email.value.textContent
+        // Element.setAttribute(firstName,value)
+
+        // user.value = firstName.value.textContent;
+        // lastName.value = lastName.value.textContent;
+        // email.value = email.value.textContent;
+        // firstName.value = firstName.textContent;
+         editsignature();
+        
     }
 })
 
