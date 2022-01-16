@@ -61,31 +61,30 @@ const validate = input => {
             break;
     }
 }
-const editsignature = (e) => {
+// const editsignature = (e) => {
 
-    signatures.forEach(user => {
-        if(user.id === e.target.parentNode.parentElement.id){
-            user.firstName = firstName.textContent;
-        }
-    })
+//     signatures.forEach(user => {
+//         if(user.id === e.target.parentNode.parentElement.id){
+//             user.firstName = firstName.textContent;
+//         }
+//     })
 
-    //  signatures.forEach(user => {
-    //       if(user.id === e.target.parentNode.parentElement.id){
-    //           signatures.firstName = firstName.textContent;
+//     //  signatures.forEach(user => {
+//     //       if(user.id === e.target.parentNode.parentElement.id){
+//     //           signatures.firstName = firstName.textContent;
               
-    //       }
-          
-    //       )}
-    // const edit = 
-    // signatures.user = firstName.textContent;
-    // user.firstName = firstName.textContent;
-    // user.email = email.value.textContent;
+//     //       }
+//     //       )}
+//     // const edit = 
+//     // signatures.user = firstName.textContent;
+//     // user.firstName = firstName.textContent;
+//     // user.email = email.value.textContent;
 
-    //  firstName.value = user[0].textContent;
-    //  lastName.value = user[1].textContent;
-    //  email.value = user[2].textContent;
-    //  button.textContent = 'SPARA';
-}
+//     //  firstName.value = user[0].textContent;
+//     //  lastName.value = user[1].textContent;
+//     //  email.value = user[2].textContent;
+//     //  button.textContent = 'SPARA';
+// }
 
 let signatures = [];
 
@@ -109,6 +108,8 @@ const addSignature = () => {
 
     })
 }
+
+
 
 regForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -146,6 +147,17 @@ output.addEventListener('click', e => {
         addSignature();
     }
     else if (e.target.parentElement.id === 'btn-edit') {
+        {
+            for(let i = 0; i < signatures.length; i++){
+                signatures[i] = validate(user[i])
+            }
+        }
+        
+        addSignature();
+
+        // LIKA SOM DEN DELETE
+
+        // signatures.map(user => user.id === e.target.parentNode.parentElement.id)
     
     //  signatures.forEach(user => {
     //       if(user.id === e.target.parentNode.parentElement.id){
@@ -164,7 +176,7 @@ output.addEventListener('click', e => {
         // lastName.value = lastName.value.textContent;
         // email.value = email.value.textContent;
         // firstName.value = firstName.textContent;
-         editsignature();
+        //  editsignature();
         
     }
 })
