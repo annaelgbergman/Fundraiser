@@ -3,6 +3,10 @@ const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
 const output = document.querySelector('#value-output');
+const sign = document.querySelector('.sign');
+
+
+
 
 
 const validateText = (input) => {
@@ -61,30 +65,6 @@ const validate = input => {
             break;
     }
 }
-// const editsignature = (e) => {
-
-//     signatures.forEach(user => {
-//         if(user.id === e.target.parentNode.parentElement.id){
-//             user.firstName = firstName.textContent;
-//         }
-//     })
-
-//     //  signatures.forEach(user => {
-//     //       if(user.id === e.target.parentNode.parentElement.id){
-//     //           signatures.firstName = firstName.textContent;
-              
-//     //       }
-//     //       )}
-//     // const edit = 
-//     // signatures.user = firstName.textContent;
-//     // user.firstName = firstName.textContent;
-//     // user.email = email.value.textContent;
-
-//     //  firstName.value = user[0].textContent;
-//     //  lastName.value = user[1].textContent;
-//     //  email.value = user[2].textContent;
-//     //  button.textContent = 'SPARA';
-// }
 
 let signatures = [];
 
@@ -96,8 +76,8 @@ const addSignature = () => {
         <div class="box" id="${user.id}">
         <div>
             <div class="name">
-                <h4 class="value-name">${user.firstName}</h4>
-                <h3 class="value-name">${user.lastName}</h3>
+                <h4 class="value-name">${user.firstName.toLowerCase()}</h4>
+                <h3 class="value-name">${user.lastName.toLowerCase()}</h3>
             </div>
             <p class="value-email">${user.email}</p>
         </div>
@@ -108,7 +88,6 @@ const addSignature = () => {
 
     })
 }
-
 
 
 regForm.addEventListener('submit', e => {
@@ -130,54 +109,59 @@ regForm.addEventListener('submit', e => {
     console.log(user)
     signatures.push(user)
     addSignature();
-    firstName.value = '';
-    lastName.value = '';
-    email.value = '';
-    }
-    
+    regForm.reset();
+
+    firstName.parentElement.classList.remove('success');
+    lastName.parentElement.classList.remove('success');
+    email.parentElement.classList.remove('success');
+}
 })
-
-
 
 
 output.addEventListener('click', e => {
-    
+    const boxId = e.target.parentNode.parentElement.id;
+
     if(e.target.parentElement.id === 'btn-delete') {
-        signatures = signatures.filter(user => user.id !== e.target.parentNode.parentElement.id);
+        signatures = signatures.filter(user => user.id !== boxId);
         addSignature();
     }
-    else if (e.target.parentElement.id === 'btn-edit') {
-        {
-            for(let i = 0; i < signatures.length; i++){
-                signatures[i] = validate(user[i])
+    else if (e.target.parentElement.id === 'btn-edit'){
+            signatures.forEach(user => {
+                if(user.id === boxId){
+                    firstName.value = user.firstName;
+                    lastName.value = user.lastName;
+                    email.value = user.email;  
+                }
+            })
+            sign.classList.add('d-none')
+          
+            let button = document.createElement('button');
+            button.classList.add('btn', 'btn-primary', 'save');
+            button.innerText = 'SAVE';
+
+            let buttons = document.querySelector('.buttons');
+            buttons.appendChild(button);
+
+            button.addEventListener('click', () => addEditSignature(boxId, button))
+        }
+    })
+    
+    function addEditSignature (id, button){
+        for (const currentUser of signatures) {
+            if(currentUser.id === id){
+                currentUser.firstName = firstName.value
+                currentUser.lastName = lastName.value
+                currentUser.email = email.value
             }
         }
-        
         addSignature();
+        regForm.reset();
+        firstName.parentElement.classList.remove('error');
+        lastName.parentElement.classList.remove('error');
+        email.parentElement.classList.remove('error');
+        button.remove();
+        sign.classList.remove('d-none')
+        console.log(signatures);
 
-        // LIKA SOM DEN DELETE
-
-        // signatures.map(user => user.id === e.target.parentNode.parentElement.id)
-    
-    //  signatures.forEach(user => {
-    //       if(user.id === e.target.parentNode.parentElement.id){
-    //           signatures.firstName = firstName.textContent;
-              
-    //       }
-          
-    //       )}
-
-        // user.firstName = firstName.value.textContent;
-        // user.lastName = lastName.value.textContent,
-        // user.email = email.value.textContent
-        // Element.setAttribute(firstName,value)
-
-        // user.value = firstName.value.textContent;
-        // lastName.value = lastName.value.textContent;
-        // email.value = email.value.textContent;
-        // firstName.value = firstName.textContent;
-        //  editsignature();
-        
-    }
-})
+}
 

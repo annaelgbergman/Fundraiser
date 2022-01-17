@@ -50,7 +50,9 @@ html, body {
 .btn-primary:active {
     background-color: #023346;
 }
-
+.d-none {
+    display: none;
+}
 
 /*---- IMAGE ----*/
 .left {
@@ -96,6 +98,7 @@ html, body {
 }
 .name {
     display: flex;
+    text-transform: capitalize;
 }
 .value-name{
     margin-top: .3rem;
@@ -104,6 +107,7 @@ html, body {
 }
 .value-email{
     font-size: 15px;
+    text-transform: lowercase;
 }
 .btn-value {
     border: transparent;
@@ -116,9 +120,6 @@ html, body {
 .btn-value:focus {
 color: #024158;
 transition: background 100ms;
-}
-.save {
-    display: none;
 }
 .edit {
     font-size: 1rem;
