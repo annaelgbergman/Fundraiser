@@ -137,7 +137,7 @@ output.addEventListener('click', e => {
           
             let button = document.createElement('button');
             button.classList.add('btn', 'btn-primary', 'save');
-            button.innerText = 'SAVE';
+            button.innerText = 'SPARA';
 
             let buttons = document.querySelector('.buttons');
             buttons.appendChild(button);
@@ -156,9 +156,6 @@ output.addEventListener('click', e => {
         }
         addSignature();
         regForm.reset();
-        firstName.parentElement.classList.remove('error');
-        lastName.parentElement.classList.remove('error');
-        email.parentElement.classList.remove('error');
         button.remove();
         sign.classList.remove('d-none')
         console.log(signatures);
