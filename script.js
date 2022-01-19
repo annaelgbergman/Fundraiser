@@ -9,6 +9,7 @@ const sign = document.querySelector('.sign');
 
 
 
+
 const validateText = (input) => {
     if (input.value.trim() === '') {
         setError(input, 'Du måste fylla i ditt namn')
@@ -126,6 +127,7 @@ output.addEventListener('click', e => {
         addSignature();
     }
     else if (e.target.parentElement.id === 'btn-edit'){
+            document.querySelector('.edit').classList.add('d-none')
             signatures.forEach(user => {
                 if(user.id === boxId){
                     firstName.value = user.firstName;
@@ -147,6 +149,8 @@ output.addEventListener('click', e => {
     })
     
     function addEditSignature (id, button){
+
+
         for (const currentUser of signatures) {
             if(currentUser.id === id){
                 currentUser.firstName = firstName.value
@@ -155,8 +159,8 @@ output.addEventListener('click', e => {
             }
         }
         addSignature();
-        regForm.reset();
         button.remove();
+        regForm.reset();
         sign.classList.remove('d-none')
         console.log(signatures);
 
