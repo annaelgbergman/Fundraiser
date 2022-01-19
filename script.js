@@ -127,30 +127,29 @@ output.addEventListener('click', e => {
         addSignature();
     }
     else if (e.target.parentElement.id === 'btn-edit'){
-            document.querySelector('.edit').classList.add('d-none')
-            signatures.forEach(user => {
-                if(user.id === boxId){
-                    firstName.value = user.firstName;
-                    lastName.value = user.lastName;
-                    email.value = user.email;  
-                }
-            })
-            sign.classList.add('d-none')
-          
-            let button = document.createElement('button');
-            button.classList.add('btn', 'btn-primary', 'save');
-            button.innerText = 'SPARA';
 
-            let buttons = document.querySelector('.buttons');
-            buttons.appendChild(button);
+        signatures.forEach(user => {
+            if(user.id === boxId){
+                firstName.value = user.firstName;
+                lastName.value = user.lastName;
+                email.value = user.email;  
+            }
+        })
+        
+        sign.classList.add('d-none')
+        
+        let button = document.createElement('button');
+        button.classList.add('btn', 'btn-primary', 'save');
+        button.innerText = 'SPARA';
+        
+        let buttons = document.querySelector('.buttons');
+        buttons.appendChild(button);
+        
+        button.addEventListener('click', () => addEditSignature(boxId, button))
+    }
+})
 
-            button.addEventListener('click', () => addEditSignature(boxId, button))
-        }
-    })
-    
-    function addEditSignature (id, button){
-
-
+function addEditSignature (id, button){
         for (const currentUser of signatures) {
             if(currentUser.id === id){
                 currentUser.firstName = firstName.value
