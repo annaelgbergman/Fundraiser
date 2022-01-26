@@ -6,10 +6,6 @@ const output = document.querySelector('#value-output');
 const sign = document.querySelector('.sign');
 
 
-
-
-
-
 const validateText = (input) => {
     if (input.value.trim() === '') {
         setError(input, 'Du måste fylla i ditt namn')
